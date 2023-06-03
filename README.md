@@ -1,6 +1,6 @@
 # Maze In Rustlang
 
-This is an implementation for the Depth-First-Search algorithem written in Rustlang that's been used in the Maze App here
+This is an implementation for the Depth-First-Search algorithem written in Rustlang that's been used in the Maze App here https://github.com/Pelkhier/maze_app
 
 ## Requirements
 
