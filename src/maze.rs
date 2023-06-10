@@ -44,9 +44,9 @@ impl Maze {
         target_row: usize,
         target_col: usize,
     ) {
+        self.dfs(start_row, start_col);
         self.grid[start_row][start_col] = Cell::Start;
         self.grid[target_row][target_col] = Cell::Target;
-        self.dfs(start_row, start_col);
     }
 
     fn dfs(&mut self, row: usize, col: usize) {
@@ -117,6 +117,7 @@ impl Maze {
                     visited,
                 ) {
                     if self.grid[new_row as usize][new_col as usize] == Cell::Target {
+                        self.grid[new_row as usize][new_col as usize] = Cell::Target;
                         return true;
                     }
                     self.grid[new_row as usize][new_col as usize] = Cell::Path;
