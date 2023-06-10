@@ -1,3 +1,4 @@
+use colored::Colorize;
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use std::fmt;
@@ -14,11 +15,11 @@ pub enum Cell {
 impl fmt::Display for Cell {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let symbol = match self {
-            Cell::Wall => "#",
-            Cell::Passage => " ",
-            Cell::Start => "S",
-            Cell::Target => "T",
-            Cell::Path => "*",
+            Cell::Wall => "#".red(),
+            Cell::Passage => " ".black(),
+            Cell::Start => "S".green(),
+            Cell::Target => "T".yellow(),
+            Cell::Path => "*".blue(),
         };
         write!(f, "{}", symbol)
     }
@@ -115,12 +116,14 @@ impl Maze {
                     target_col,
                     visited,
                 ) {
+                    if self.grid[new_row as usize][new_col as usize] == Cell::Target {
+                        return true;
+                    }
                     self.grid[new_row as usize][new_col as usize] = Cell::Path;
                     return true;
                 }
             }
         }
-
         false
     }
 

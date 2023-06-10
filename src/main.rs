@@ -11,11 +11,11 @@ fn main() {
 
     let rows = args.rows;
     let cols = args.columns;
-    let start_row = args.sr;
-    let start_col = args.sc;
+    let start_row = args.start_row;
+    let start_col = args.start_row;
 
-    let target_row = args.tr;
-    let target_col = args.tc;
+    let target_row = args.target_row;
+    let target_col = args.target_column;
 
     // let rows = 10;
     // let cols = 20;

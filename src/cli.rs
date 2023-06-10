@@ -9,16 +9,16 @@ pub struct Cli {
     #[arg(short, long)]
     /// The number of columns of the maze
     pub columns: usize,
-    #[arg(long)]
+    #[arg(long = "sr")]
     /// Where the starting point should be in rows
-    pub sr: usize,
-    #[arg(long)]
+    pub start_row: usize,
+    #[arg(long = "sc")]
     /// Where the starting point should be in columns
-    pub sc: usize,
-    #[arg(long)]
+    pub start_column: usize,
+    #[arg(long = "tr")]
     /// Where the target point should be in rows
-    pub tr: usize,
-    #[arg(long)]
+    pub target_row: usize,
+    #[arg(long = "tc")]
     /// Where the target point should be in columns
-    pub tc: usize,
+    pub target_column: usize,
 }
